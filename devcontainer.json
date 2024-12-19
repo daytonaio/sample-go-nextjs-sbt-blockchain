@@ -1,0 +1,39 @@
+{
+  "name": "SBT Certification System Dev Container",
+  "features": {
+    "go": "latest",
+    "node": "lts",
+    "docker-in-docker": "latest"
+  },
+  "postCreateCommand": [
+    "cd /workspace/sbtkalp && go mod tidy",
+    "cd /workspace/certification && npm install"
+  ],
+  "runArgs": [
+    "--env", "NEXT_PUBLIC_API_KEY=your-kalp-api-key",
+    "--env", "CONTRACT_ID=vHYQcRijQGB3UpVhqc3UeBM2D3ztjPuS1732534432325"
+  ],
+  "mounts": [
+    "source=${localWorkspaceFolder}/certification,target=/workspace/certification,type=bind",
+    "source=${localWorkspaceFolder}/sbtkalp,target=/workspace/sbtkalp,type=bind"
+  ],
+  "postStartCommand": "cd /workspace/certification && npm run dev",
+  "forwardPorts": [
+    3000
+  ],
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.go",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ],
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "go.gopath": "/go"
+      }
+    }
+  },
+  "containerUser": "vscode"
+}
