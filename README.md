@@ -48,7 +48,7 @@ This repository contains a sample project for building a **Certification System*
    Update the `.env.local` file with the following variables:
    ```env
    KALP_API_KEY=your-kalp-api-key
-   CONTRACT_ID=your-contract-id
+   CONTRACT_ID=your-deployed-contract-id
    ```
 
    After completing the setup, your `.env.local` should look like this, or you can use these credentials also:
