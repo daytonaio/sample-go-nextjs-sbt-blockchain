@@ -1,4 +1,3 @@
-
 # Certify: Certification System using Soulbound Tokens (SBT) on Kalp Blockchain
 
 This repository contains a sample project for building a **Certification System** using **Soulbound Tokens (SBTs)** on the **Kalp Blockchain**. The project involves creating a smart contract in **Go** and a frontend built with **Next.js** to issue and verify digital certificates. The certificates are tied to the recipient’s wallet address and cannot be transferred.
@@ -15,14 +14,32 @@ This repository contains a sample project for building a **Certification System*
    daytona create https://github.com/daytonaio/sample-go-nextjs-sbt-blockchain
    ```  
 
-3. **Build the Project**:  
+3. **Make an Account on Kalp Studio**:  
+   - Navigate to [Kalp Studio](https://www.kalp.studio) and create an account.
+   - Go to the [Kalp Console Dashboard](https://console.kalp.studio/dashboard).
+
+4. **Create a Custodial Wallet**:  
+   - Create a custodial wallet on the Kalp blockchain by following the [wallet creation guide](https://docs.kalp.studio/Getting-started/NFT-Creator/How-to-connect-wallet/?h=wallet#3-complete-the-wallet-creation).
+   - Connect to the created wallet.
+
+5. **Enable Kalp Instant Deployer and Deploy Smart Contract**:  
+   - Enable the Kalp Instant Deployer from the dashboard and click on "Explore."
+   - Deploy the smart contract in the `sbtkalp` folder by zipping the folder. Follow the [deployment guide](https://docs.kalp.studio/Getting-started/Kalp-Instant-Deployer/How-to-Deploy-a-Smart-Contract-on-Kalp-Studio/#step-4-selecting-a-template).
+   - Once the smart contract is deployed, generate API endpoints for the deployed contract from the [API Gateway](https://console.kalp.studio/smart-contract-app/api-gateway).
+   - Copy the smart contract address and set it as `CONTRACT_ID` in your environment file.
+
+6. **Generate an API Key**:  
+   - Create an API key from the [API Key Generation page](https://console.kalp.studio/smart-contract-app/api-key-generation).
+   - Set this as `KALP_API_KEY` in your environment file.
+
+7. **Build the Project**:  
    Navigate to your project directory and install the dependencies for both the smart contract and frontend:
    ```bash
    cd sbtkalp && go mod tidy
    cd certification && npm install
    ```
 
-4. **Set Up Environment Variables**:
+8. **Set Up Environment Variables**:
    Ensure that you have a `.env.local` file in the frontend directory with your API key and other necessary variables:
    ```bash
    cp .env.example .env.local
@@ -34,7 +51,13 @@ This repository contains a sample project for building a **Certification System*
    CONTRACT_ID=your-contract-id
    ```
 
-5. **Start the Application**:  
+   After completing the setup, your `.env.local` should look like this, or you can use these credentials also:
+   ```env
+   KALP_API_KEY=6afc71753077b8204e941ef3ef52a5673dfa3bcd5abde5328f707ea0ade370422de156d108780a6f8897a577038192c13ffa78d81cf46e442eec758d51c66134bb6003
+   CONTRACT_ID=GHLDxsJqFi0w0OHPSehidrgd6ZTXFdV11732685112304
+   ```
+
+9. **Start the Application**:  
    To run the frontend, use the following command:
    ```bash
    cd certification && npm run dev
