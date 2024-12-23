@@ -30,8 +30,8 @@ This repository contains a sample project for building a **Certification System*
 
    Update the `.env.local` file with the following variables:
    ```env
-   NEXT_PUBLIC_API_KEY=your-kalp-api-key
-   CONTRACT_ID=vHYQcRijQGB3UpVhqc3UeBM2D3ztjPuS1732534432325
+   KALP_API_KEY=your-kalp-api-key
+   CONTRACT_ID=your-contract-id
    ```
 
 5. **Start the Application**:  
@@ -93,7 +93,7 @@ const mintSBT = async (recipientAddress: string) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': process.env.NEXT_PUBLIC_API_KEY!,
+        'x-api-key': process.env.KALP_API_KEY!,
       },
       body: JSON.stringify({
         network: "TESTNET",
@@ -119,7 +119,7 @@ const querySBT = async (owner: string, tokenId: string) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': process.env.NEXT_PUBLIC_API_KEY!,
+        'x-api-key': process.env.KALP_API_KEY!,
       },
       body: JSON.stringify({
         network: "TESTNET",
