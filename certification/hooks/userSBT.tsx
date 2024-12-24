@@ -5,12 +5,12 @@ const useSBTApi = () => {
   const initialize = async (description: string) => {
     try {
       const response = await fetch(
-        `${baseURL}/invoke/GHLDxsJqFi0w0OHPSehidrgd6ZTXFdV11732685112304/Initialize`,
+        `${baseURL}/invoke/${process.env.CONTRACT_ID!}/Initialize`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "x-api-key": process.env.NEXT_PUBLIC_API_KEY!,
+            "x-api-key": process.env.KALP_API_KEY!,
           },
           body: JSON.stringify({
             network: "TESTNET",
@@ -36,12 +36,12 @@ const useSBTApi = () => {
   ) => {
     try {
       const response = await fetch(
-        `${baseURL}/invoke/GHLDxsJqFi0w0OHPSehidrgd6ZTXFdV11732685112304/MintSBT`,
+        `${baseURL}/invoke/${process.env.CONTRACT_ID!}/MintSBT`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "x-api-key": process.env.NEXT_PUBLIC_API_KEY!,
+            "x-api-key": process.env.KALP_API_KEY!,
           },
           body: JSON.stringify({
             network: "TESTNET",
@@ -65,12 +65,12 @@ const useSBTApi = () => {
   const querySBT = async (owner: string, tokenId: string) => {
     try {
       const response = await fetch(
-        `${baseURL}/query/GHLDxsJqFi0w0OHPSehidrgd6ZTXFdV11732685112304/QuerySBT`,
+        `${baseURL}/query/${process.env.CONTRACT_ID!}/QuerySBT`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "x-api-key": process.env.NEXT_PUBLIC_API_KEY!,
+            "x-api-key": process.env.KALP_API_KEY!,
           },
           body: JSON.stringify({
             network: "TESTNET",
@@ -92,12 +92,12 @@ const useSBTApi = () => {
   const getSBTByOwner = async (owner: string) => {
     try {
       const response = await fetch(
-        `${baseURL}/query/GHLDxsJqFi0w0OHPSehidrgd6ZTXFdV11732685112304/GetSBTByOwner`,
+        `${baseURL}/query/${process.env.CONTRACT_ID!}/GetSBTByOwner`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "x-api-key": process.env.NEXT_PUBLIC_API_KEY!,
+            "x-api-key": process.env.KALP_API_KEY!,
           },
           body: JSON.stringify({
             network: "TESTNET",
@@ -118,12 +118,12 @@ const useSBTApi = () => {
   const getAllTokenIDs = async () => {
     try {
       const response = await fetch(
-        `${baseURL}/query/GHLDxsJqFi0w0OHPSehidrgd6ZTXFdV11732685112304/GetAllTokenIDs`,
+        `${baseURL}/query/${process.env.CONTRACT_ID!}/GetAllTokenIDs`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "x-api-key": process.env.NEXT_PUBLIC_API_KEY!,
+            "x-api-key": process.env.KALP_API_KEY!,
           },
           body: JSON.stringify({
             network: "TESTNET",
@@ -141,12 +141,12 @@ const useSBTApi = () => {
   const attemptTransfer = async (from: string, to: string, tokenId: string) => {
     try {
       const response = await fetch(
-        `${baseURL}/query/GHLDxsJqFi0w0OHPSehidrgd6ZTXFdV11732685112304/TransferSBT`,
+        `${baseURL}/query/${process.env.CONTRACT_ID!}/TransferSBT`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "x-api-key": process.env.NEXT_PUBLIC_API_KEY!,
+            "x-api-key": process.env.KALP_API_KEY!,
           },
           body: JSON.stringify({
             network: "TESTNET",

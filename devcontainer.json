@@ -10,8 +10,8 @@
     "cd /workspace/certification && npm install"
   ],
   "runArgs": [
-    "--env", "NEXT_PUBLIC_API_KEY=your-kalp-api-key",
-    "--env", "CONTRACT_ID=vHYQcRijQGB3UpVhqc3UeBM2D3ztjPuS1732534432325"
+    "--env", "KALP_API_KEY=your-kalp-api-key",
+    "--env", "CONTRACT_ID=your-contract-id"
   ],
   "mounts": [
     "source=${localWorkspaceFolder}/certification,target=/workspace/certification,type=bind",
